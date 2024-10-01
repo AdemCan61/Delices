@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	{{parent()}}Ajoute Bonbon
+{% endblock %}
+{% block body %}
+	<br>
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-10 text-primary">
+				{{form(form)}}
+					<a href="{{path('app_liste_bonbon')}}">
+						<button type="button" class="btn btn-light">Liste des bonbons</button>
+					</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

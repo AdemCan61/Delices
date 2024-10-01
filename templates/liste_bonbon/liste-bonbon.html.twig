@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	{{parent()}}Ajoute Bonbon
+{% endblock %}
+{% block body %}
+<div class="accordion" id="accordionExample">
+		{% for listebonbon in listebonbons %}
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="heading{{ loop.index }}">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}" aria-expanded="false" aria-controls="collapse{{ loop.index }}">
+						{{ listebonbon.nom }}
+					</button>
+				</h2>
+				<div id="collapse{{ loop.index }}" class="accordion-collapse collapse" aria-labelledby="heading{{ loop.index }}" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						<strong>{{ listebonbon.gout }}</strong>
+						<br>
+						{{ listebonbon.description }}.<br>
+						<code>{{ listebonbon.prix }}</code>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	<br><br>
+{% endblock %}
